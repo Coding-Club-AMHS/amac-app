@@ -1,8 +1,9 @@
 import React from 'react';
+import StyledMenu from '../styles/Menu.styled';
 
 const Menu = () => {
     return(
-        <section></section>
+        <StyledMenu></StyledMenu>
     )
 }
 
