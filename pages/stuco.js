@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Menu from '../components/Menu'
 
 export default function Stuco() {
   return (
@@ -8,6 +9,7 @@ export default function Stuco() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Menu />
       <main>
 
       </main>

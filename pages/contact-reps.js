@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Menu from '../components/Menu'
 
 export default function ContactReps() {
   return (
@@ -7,7 +8,8 @@ export default function ContactReps() {
         <title>Contact Your Reps</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
+      <Menu />
       <main>
 
       </main>

@@ -8,15 +8,31 @@ const StyledMenu = styled.nav`
     display: flex;
     flex-direction: row;
     padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-bottom: solid 2px;
     font-weight: bold;
 
-    a {
-        margin: auto;
-
+    * {
+        width: 14vw;
+        text-align:center;
     }
 
     a:hover {
         opacity: 0.5;
+    }
+
+    .dropdown:hover {
+
+    }
+
+    .school-dropdown {
+        width: 14vw;
+        display: flex;
+        flex-direction:column;
+    }
+
+    .school-dropdown a {
+        align-self: left;
     }
 
 `

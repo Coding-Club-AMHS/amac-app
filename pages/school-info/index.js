@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Menu from '../../components/Menu'
 
 export default function SchoolInfo() {
   return (
@@ -8,6 +9,7 @@ export default function SchoolInfo() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Menu />
       <main>
 
       </main>

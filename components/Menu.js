@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import StyledMenu from '../styles/Menu.styled';
 
 const Menu = () => {
-    return(
+    const [dropdown, setDropDown] = useState(false);
+    const toggleDropdown = () => {
+        setDropDown(!dropdown);
+    }
+    return (
         <StyledMenu>
             <a href='/'>Home</a>
             <a href='/stuco'>Student Council</a>
             <a href='/guidance'>Guidance</a>
             <a href='/clubs'>Clubs</a>
-            <a href='/school-info'>School Information</a>
+            <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
+                <a href='/school-info' className="dropdown">School Info</a>
+                {
+                    dropdown ?
+                        <div className="school-dropdown">
+                            <a href='/school-info/covid-info'>COVID Information</a>
+                            <a href='/school-info/links'>Frequently Accessed Links</a>
+                        </div>
+                        :null
+                }
+            </div>
             <a href='/contact-reps'>Contact Your Reps!</a>
             <a href='/faq'>FAQ</a>
 

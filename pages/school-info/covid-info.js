@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Menu from '../../components/Menu'
 
 export default function CovidInfo() {
   return (
@@ -7,7 +8,7 @@ export default function CovidInfo() {
         <title>COVID Information</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Menu />
       <main>
 
       </main>
