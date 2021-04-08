@@ -9,9 +9,10 @@ body {
 main {
   background-color: #002642;
   color: #E0BE36;
-  min-width: 100vw;
+  min-width: 80vw;
   min-height: 100vh;
   padding: 2%;
+  
 }
 a {
   color: inherit;
