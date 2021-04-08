@@ -8,8 +8,10 @@ body {
 
 main {
   background-color: #002642;
+  color: #E0BE36;
   min-width: 100vw;
   min-height: 100vh;
+
 }
 a {
   color: inherit;
@@ -17,5 +19,6 @@ a {
 }
 
 * {
+  margin-top: 0px;
   box-sizing: border-box;
 }
