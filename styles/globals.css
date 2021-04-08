@@ -11,7 +11,7 @@ main {
   color: #E0BE36;
   min-width: 100vw;
   min-height: 100vh;
-
+  padding: 2%;
 }
 a {
   color: inherit;
