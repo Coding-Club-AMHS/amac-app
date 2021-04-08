@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-
+        <h1>Welcome to Alexander Mackenzie High School!</h1>
       </main>
 
     </div>
