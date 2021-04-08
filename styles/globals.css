@@ -22,3 +22,9 @@ a {
   margin-top: 0px;
   box-sizing: border-box;
 }
+
+.carousel {
+  width: 170vh;
+  height: 100vh;
+  padding: 0;
+}
