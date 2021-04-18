@@ -6,7 +6,6 @@ export default function ContactReps() {
     <div>
       <Head>
         <title>Contact Your Reps</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <Menu />
