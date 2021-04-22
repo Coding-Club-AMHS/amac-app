@@ -30,6 +30,7 @@ const Menu = () => {
                         <div className="school-dropdown">
                             <a href='/school-info/covid-info'>COVID Information</a>
                             <a href='/school-info/links'>Frequently Accessed Links</a>
+                            <a href='/school-info/weather'>Weather</a>
                         </div>
                         :null
                 }
