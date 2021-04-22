@@ -9,7 +9,18 @@ const Menu = () => {
     return (
         <StyledMenu>
             <a href='/'>Home</a>
-            <a href='/stuco'>Student Council</a>
+            <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
+                <a href='/stuco' className="dropdown">STUCO</a>
+                {
+                    dropdown ?
+                        <div className="school-dropdown">
+                            <a href='/stuco/announcements'>Announcements</a>
+                            <a href='/stuco/meet-stuco'>Current STUCO Team</a>
+                            <a href='/stuco/blog'>Blog</a>
+                        </div>
+                        :null
+                }
+            </div>
             <a href='/guidance'>Guidance</a>
             <a href='/clubs'>Clubs</a>
             <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
