@@ -1,4 +1,4 @@
-import StyledAnnouncement from '../styles/announcement.styled'
+import StyledAnnouncement from '../styles/Announcement.styled'
 const Announcement = () => {
     return(
         <div>

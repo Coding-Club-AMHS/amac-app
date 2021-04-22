@@ -1,7 +1,8 @@
 import Head from 'next/head'
-import { Tab } from 'react-bootstrap'
 import Menu from '../../components/Menu'
 import Announcement from '../../components/Announcement'
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import styles from '../../styles/homepage.module.css'
 
 export default function StucoAnnouncements() {
   return (
@@ -15,9 +16,23 @@ export default function StucoAnnouncements() {
       <main>
           <div>
               <h1>Announcements</h1>
-                  <Announcement/>
-                  <Announcement/>
-                  <Announcement/>
+
+              <div>
+                <Breadcrumb>
+                  <Breadcrumb.Item href='/' className={styles.breadcrumb}>Home</Breadcrumb.Item>
+                  <Breadcrumb.Item href='/stuco' className={styles.breadcrumb}>Stuco</Breadcrumb.Item>
+                  <Breadcrumb.Item active className={styles.breadcrumb}>Announcements</Breadcrumb.Item>
+                </Breadcrumb>
+              </div>
+              
+
+              <div>
+                <Announcement/>
+                <Announcement/>
+                <Announcement/>
+                <Announcement/>
+              </div>
+                  
               
           </div>
       </main>

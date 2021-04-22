@@ -10,6 +10,7 @@ const StyledAnnouncement = styled.div`
     border-radius: 15px 50px 30px 1px;
     border-style: outset;
     border-width: 0.8vw;
+    align: center;
     
     .heading {
         font-weight: bold;
@@ -26,6 +27,7 @@ const StyledAnnouncement = styled.div`
         color: black;
         text-align: left;
         padding-left: 5vh;
+        padding-bottom: 2vh;
     }
     
     .date {
@@ -34,6 +36,7 @@ const StyledAnnouncement = styled.div`
         color: white;
         text-align: left;
         padding-left: 5vh;
+        padding-top: 2vh;
     }
 `
 export default StyledAnnouncement;
