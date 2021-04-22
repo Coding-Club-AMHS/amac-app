@@ -15,7 +15,7 @@ export default function Home() {
       <main>
         <h1>Welcome to Alexander Mackenzie High School!</h1>
         <div>
-          <Carousel >
+          <Carousel>
             <Carousel.Item>
               <img
                 className="d-block w-100"
