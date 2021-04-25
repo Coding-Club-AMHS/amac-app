@@ -25,7 +25,6 @@ export default function LoginHeader () {
                 </span>
               <a
                   href={`/api/auth/signout`}
-                  className={styles.button}
                   onClick={(e) => {
                     e.preventDefault()
                     signOut()
