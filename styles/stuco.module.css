@@ -1,0 +1,12 @@
+.announcementContainer {
+    color: black;
+    width: 80vw;
+    height: 10vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: solid 2px;
+    border-color: white;
+    font-weight: bold;
+    font-size: x-large;
+}
+
