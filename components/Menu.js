@@ -35,7 +35,7 @@ const Menu = () => {
                         :null
                 }
             </div>
-            <a href='/contact-reps'>Contact Your Reps!</a>
+            <a target="_blank" href='https://forms.gle/9bMbF7F9pknpF2Cy8'>Contact Your Reps!</a>
             <a href='/faq'>FAQ</a>
 
         </StyledMenu>
