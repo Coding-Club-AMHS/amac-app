@@ -168,6 +168,20 @@ export async function getStaticProps() {
     // TODO: Switch out this link for the real api.
     const res = await fetch('http://192.168.100.133:8000/api.json')
    // const res = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`)
+
+    /*
+    TODO:
+    Possible strategy to reduce API calls:
+        - On every API call, create a timestamp for that call to show how old the data is
+        - On every subsequent call, check if the last request was made in the last hour
+            - If so, reuse the previous data
+            - Else, make a new call and update the timestamp
+
+        This strategy will reduce API calls to a maximum of 24 per day (Accessed every hour).
+        Additionally, we can add "Last updated: {x} minutes ago" to the page, where x is the time between the last API call and the current time.
+
+    @Matthew if you have any questions let me know (Jason)
+    */
     const weather = await res.json()
 
     return {
