@@ -36,3 +36,6 @@ yarn-error.log*
 # Accuweather API Key
 api.json
 api_key.json
+
+# MongoDB information
+mongodb.txt

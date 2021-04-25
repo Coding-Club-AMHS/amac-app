@@ -1,0 +1,4 @@
+username: codeAdmin
+password: t4oMqsVvgKU9DZmG
+database name: authdb
+atlas: mongodb+srv://codeAdmin:t4oMqsVvgKU9DZmG@cluster0.ssqol.mongodb.net/authdb?retryWrites=true&w=majority
