@@ -1,4 +1,6 @@
 import {connectToDatabase} from '../../util/db'
+import { getSession } from 'next-auth/client'
+import LoginHeader from '../../components/login-header'
 
 export default function AddStream({isConnected}) {
   return(
@@ -6,9 +8,8 @@ export default function AddStream({isConnected}) {
       {isConnected 
       ? <div>
         <main>
-          <h1>
-            Test
-          </h1>
+          {/*waiting to see if perms can be found, this should've really been two different components but i was lazy*/}
+          <LoginHeader />
         </main>
       </div> 
       : <div>
@@ -20,41 +21,14 @@ export default function AddStream({isConnected}) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const { client } = await connectToDatabase()
-
-  const isConnected = await client.isConnected()
-
+export const getServerSideProps = async function () {
+  const { client } = await connectToDatabase();
+  const isConnected = await client.isConnected();
   return {
-    props: { isConnected },
+    props: {
+      isConnected
+    }
   }
+
 }
-/*export const getServerSideProps = withSession(async function ({ req, res }) {
-    // Get the user's session based on the request
-    const user = req.session.get('user')
-  
-    if (!user) {
-      return {
-        redirect: {
-          destination: '/login',
-          permanent: false,
-        },
-      }
-    }
-  
-    return {
-      props: { user },
-    }
-  })
-  
-  const Profile = ({ user }) => {
-    // Show the user. No loading state is required
-    return (
-      <Layout>
-        <h1>Your Profile</h1>
-        <pre>{JSON.stringify(user, null, 2)}</pre>
-      </Layout>
-    )
-  }
-  
-  export default Profile*/
+
