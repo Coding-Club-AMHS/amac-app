@@ -1,9 +1,0 @@
-username: admin
-password: WeMR9FVZ4vuWyCd
-database name: authdb
-atlas: mongodb+srv://admin:WeMR9FVZ4vuWyCd@cluster0.wtlyt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
-
-Auth info:
-Username: admin
-Password: +vgHT8Lp2fFWX0Ax (no spaces)
