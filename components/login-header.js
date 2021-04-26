@@ -20,8 +20,7 @@ export default function LoginHeader () {
             </>}
             {session && <>
               <span>
-                <small>Signed in as</small><br/>
-                <strong>{session.user.username}</strong>
+                <small>Signed in as admin</small><br/>
                 </span>
               <a
                   href={`/api/auth/signout`}
