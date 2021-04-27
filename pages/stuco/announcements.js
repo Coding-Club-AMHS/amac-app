@@ -29,9 +29,11 @@ export default function StucoAnnouncements({ announcementStream }) {
 
           <div>
             {announcementStream.slice(0).reverse().map((announcement) => (
-              <div className={styles.entry}>
-                <Announcement lastmodified={new Date(announcement.lastUpdatedDate).toDateString()} firstcreated={new Date(announcement.firstPostedDate).toDateString()} heading={announcement.title} description={announcement.desc} />
-              </div>
+              announcement.stream == 'studentcouncil'
+                ? <div className={styles.entry}>
+                  <Announcement lastmodified={new Date(announcement.lastUpdatedDate).toDateString()} firstcreated={new Date(announcement.firstPostedDate).toDateString()} heading={announcement.title} description={announcement.desc} />
+                </div>
+                : null
             ))}
           </div>
 
