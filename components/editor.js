@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/client'
 import AccessDenied from './access-denied'
 import StyledEditor from '../styles/Editor.styled'
 
-export default function Editor() {
+export default function Editor({setOpen}) {
     const router = useRouter();
     const contentType = 'application/json';
 
@@ -30,7 +30,8 @@ export default function Editor() {
             if(!res.ok) {
                 throw new Error(res.status);
             }
-            router.push('/')
+            router.push('/streams/announcements/')
+            setOpen(false);
         } catch (err) {
             setSubmitError("Failed to add announcement");
         }
@@ -42,6 +43,7 @@ export default function Editor() {
     }
     return (
         <StyledEditor>
+            <button className='close' onClick={() => {setOpen(false)}}>X</button>
             <div className='title'><h2>Add an announcement</h2></div>
             <div className='input'>
                 <label>Title:</label>

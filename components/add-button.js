@@ -1,9 +1,9 @@
 import StyledAddButton from '../styles/AddButton.styled'
 import {useState, useEffect} from 'react'
-const Announcement = ({open, setOpen}) => {
+const Announcement = ({setOpen}) => {
     return(
         <div>
-            <StyledAddButton onClick={() => {open? null: setOpen(true)}}><h1>+</h1></StyledAddButton>
+            <StyledAddButton onClick={() => {setOpen(true)}}><h1>+</h1></StyledAddButton>
         </div>
     )
 }

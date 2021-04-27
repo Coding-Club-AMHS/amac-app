@@ -26,8 +26,8 @@ export default function AddStream({ isConnected, announcementStream }) {
                         <div>
                             <LoginHeader />
                             {open
-                                ? <Editor />
-                                : undefined}
+                                ? <Editor setOpen={setOpen}/>
+                                : null}
                             <div>
                                 {announcementStream.map((announcement) => (
                                     <div>
@@ -39,7 +39,7 @@ export default function AddStream({ isConnected, announcementStream }) {
                                 ))}
                             </div>
                             <div>
-                                <AddButton open={open} setOpen={setOpen} />
+                                <AddButton setOpen={setOpen} />
                             </div>
                         </div>
 

@@ -6,6 +6,10 @@ const StyledEditor = styled.div`
     width: 85vw;
     padding: 2vh;
     display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: left;
     flex-direction: column;
     
@@ -32,7 +36,7 @@ const StyledEditor = styled.div`
     }
     textarea {
         background-color: white;
-        height: 50vh;
+        height: 30vh;
     }
     input {
         background-color: white;
@@ -53,6 +57,17 @@ const StyledEditor = styled.div`
     }
     .error {
         color: red;
+    }
+    .close {
+        background-color:red;
+        left: 0;
+        top: 0;
+        position: absolute;
+        padding: 0.5% 1% 0.5% 1%;
+        margin: 0.5%;
+    }
+    .close:hover {
+        background-color:crimson;
     }
 
 `
