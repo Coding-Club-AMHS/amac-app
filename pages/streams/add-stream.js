@@ -1,11 +1,13 @@
 import { connectToDatabase } from '../../util/db'
-import { getSession, useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
 import Menu from '../../components/Menu';
 import LoginHeader from '../../components/login-header'
-import { useEffect } from 'react';
+import AccessDenied from '../../components/access-denied'
 
-export default function AddStream({ isConnected, users }) {
+export default function AddStream({ isConnected}) {
   const [session, loading] = useSession();
+  if (typeof window !== 'undefined' && loading) return null
+  if (!session) { return <div><AccessDenied /></div> }
 
   return (
     <div>
@@ -14,20 +16,12 @@ export default function AddStream({ isConnected, users }) {
         ? <div>
           <main>
             {/*waiting to see if perms can be found, this should've really been two different components but i was lazy*/}
-            <LoginHeader />
-            {session 
-            ?<div>
-            <ul>
-              {users.map(user => (
-                <li>
-                  <h2>{user.username}</h2>
-                  <h2>{user.password}</h2>
-                </li>
-              ))}
-            </ul>
-          </div>
-            : null}
-            
+            <div>
+              <LoginHeader />
+              <button onClick={() => {window.location='/streams/announcements'}}>Edit announcements</button>
+              <button onClick={() => {window.location='/streams/clubs'}}>Edit clubs</button>
+            </div>
+
           </main>
         </div>
         : <div>
@@ -43,10 +37,8 @@ export const getServerSideProps = async function () {
   const { client } = await connectToDatabase();
   const isConnected = client.isConnected();
 
-  const users = await client.db('authdb').collection('users').find({}).toArray();
   return {
     props: {
-      users: JSON.parse(JSON.stringify(users)),
       isConnected
     }
   }

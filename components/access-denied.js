@@ -9,7 +9,7 @@ export default function AccessDenied () {
            onClick={(e) => {
            e.preventDefault()
            signIn()
-        }}>You do not have access to this page!</a>
+        }}>You do not have access to this page. Click here to sign in.</a>
       </p>
     </>
   )

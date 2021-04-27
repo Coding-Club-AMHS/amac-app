@@ -43,6 +43,7 @@ export default function Home() {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
+          <a href='./streams/add-stream/'>Add an announcement</a>
         </div>
 
         <div>
