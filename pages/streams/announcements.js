@@ -5,47 +5,86 @@ import LoginHeader from '../../components/login-header'
 import AccessDenied from '../../components/access-denied'
 import AddButton from '../../components/add-button'
 import Editor from '../../components/editor'
-import { useState,useEffect } from 'react';
+import ModifyStream from '../../components/modify-announcement-stream'
+import { useState } from 'react';
+import { useRouter } from 'next/router'
 import styles from '../../styles/announcement-editor.module.css'
 
 
 export default function AddStream({ announcementStream }) {
     const [session, loading] = useSession();
     const [open, setOpen] = useState(false);
+    const [edit, setEdit] = useState(false);
+    const [editProps, setEditProps] = useState({});
 
-    useEffect(() => console.log(announcementStream))
+    const router = useRouter();
+    const contentType = 'application/json';
+
     if (typeof window !== 'undefined' && loading) return null
     if (!session) { return <div><AccessDenied /></div> }
 
+    const onEdit = ({ id, title, content, stream }) => {
+        if (!edit) {
+            setEdit(true);
+            setEditProps({id: id, announceTitle: title, announceContent: content, announceStream: stream });
+        }
+    }
+
+    const onDelete = async ({ id }) => {
+        try {
+            const res = await fetch(`/api/announcements/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    Accept: contentType,
+                    'Content-Type': contentType
+                }
+            })
+            if (!res.ok) {
+                throw new Error(res.status);
+            }
+            router.reload();
+        } catch (error) {
+            console.log(id);
+            window.alert('There was an error deleting this post.');
+        }
+    }
     return (
         <div>
             <Menu />
 
-                <div>
-                    <main>
-                        {/*waiting to see if perms can be found, this should've really been two different components but i was lazy*/}
+            <div>
+                <main>
+                    {/*waiting to see if perms can be found, this should've really been two different components but i was lazy*/}
+                    <div>
+                        <LoginHeader />
+                        {open
+                            ? <Editor setOpen={setOpen} />
+                            : null}
                         <div>
-                            <LoginHeader />
-                            {open
-                                ? <Editor setOpen={setOpen}/>
-                                : null}
-                            <div>
-                                {announcementStream.map((announcement) => (
-                                    <div className={styles.entry}>
+                            {edit
+                                ? <ModifyStream setEdit={setEdit} id={editProps.id} announceTitle={editProps.announceTitle} announceContent={editProps.announceContent} announceStream={editProps.announceStream} />
+                                : <AddButton setOpen={setOpen} />
+                            }
+                            {announcementStream.map((announcement) => (
+                                <div className={styles.entry}>
+                                    <div>
                                         <p>{new Date(announcement.lastUpdatedDate).toDateString()}</p>
                                         <h1>{announcement.title}</h1>
                                         {announcement.desc.split('\n').map(str => <p>{str}</p>)}
                                         <h2>Stream: {announcement.stream}</h2>
                                     </div>
-                                ))}
-                            </div>
-                            <div>
-                                <AddButton setOpen={setOpen} open={open}/>
-                            </div>
+                                    <div>
+                                        <button onClick={() => { open || edit ? null : onEdit({id: announcement._id, title: announcement.title, content: announcement.desc, stream: announcement.stream} ) }}>Edit</button>
+                                        <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) /*delete logic*/ onDelete({ id: announcement._id }) }}>Delete</button>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
-                    </main>
-                </div>
+                    </div>
+
+                </main>
+            </div>
         </div>
     )
 }

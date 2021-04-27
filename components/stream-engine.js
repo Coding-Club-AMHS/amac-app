@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/client'
-import Layout from '../components/layout'
-import AccessDenied from './access-denied'
 
-export default function StreamEditor ({streamDB}) {
-  // If session exists, display content
+import Announcement from './Announcement'
+
+export default function StreamEditor () {
   return (
     <div>
+      <Announcement></Announcement>
       <button>Edit</button>
       <button>Delete</button>
     </div>

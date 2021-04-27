@@ -1,9 +1,9 @@
-import { connectToDatabase } from '../../util/db'
+import { connectToDatabase } from '../../../util/db'
 import Head from 'next/head'
-import Menu from '../../components/Menu'
-import Announcement from '../../components/Announcement'
+import Menu from '../../../components/Menu'
+import Announcement from '../../../components/Announcement'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import styles from '../../styles/homepage.module.css'
+import styles from '../../../styles/homepage.module.css'
 
 export default function StucoAnnouncements({ announcementStream }) {
   return (
@@ -31,7 +31,7 @@ export default function StucoAnnouncements({ announcementStream }) {
             {announcementStream.slice(0).reverse().map((announcement) => (
               announcement.stream == 'studentcouncil'
                 ? <div className={styles.entry}>
-                  <Announcement lastmodified={new Date(announcement.lastUpdatedDate).toDateString()} firstcreated={new Date(announcement.firstPostedDate).toDateString()} heading={announcement.title} description={announcement.desc} />
+                  <Announcement lastmodified={announcement.lastUpdatedDate} firstcreated={announcement.firstPostedDate} heading={announcement.title} description={announcement.desc} />
                 </div>
                 : null
             ))}

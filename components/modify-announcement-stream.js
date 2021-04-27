@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import StyledEditor from '../styles/Editor.styled'
 
-export default function Editor({setOpen}) {
+export default function ModifyStream({setEdit, id, announceTitle, announceContent, announceStream}) {
     const router = useRouter();
     const contentType = 'application/json';
 
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [stream, setStream] = useState('');
+    const [title, setTitle] = useState(announceTitle);
+    const [content, setContent] = useState(announceContent);
+    const [stream, setStream] = useState(announceStream);
 
     const [submitError, setSubmitError] = useState('');
 
-    const addAnnouncement = async ({title, desc, stream}) => {
-        let announcement = {title: title, desc: desc, stream: stream, firstPostedDate: Date.now(), lastUpdatedDate: Date.now()};
+    const editAnnouncement = async ({title, desc, stream}) => {
+        let announcement = {title: title, desc: desc, stream: stream, lastUpdatedDate: Date.now()};
 
         try {
-            const res = await fetch('/api/announcements/', {
-                method: 'POST',
+            const res = await fetch(`/api/announcements/${id}`, {
+                method: 'PUT',
                 headers: {
                     Accept: contentType,
                     'Content-Type': contentType,
@@ -28,32 +28,32 @@ export default function Editor({setOpen}) {
             if(!res.ok) {
                 throw new Error(res.status);
             }
-            router.push('/streams/announcements/')
-            setOpen(false);
+            router.reload();
+            setEdit(false);
         } catch (err) {
-            setSubmitError("Failed to add announcement");
+            setSubmitError("Failed to add announcement.");
         }
     }
 
     function submitStream() {
         if (title == '' || content == '' || stream == '') return setSubmitError('Please fill out every field!');
-        addAnnouncement({title: title, desc: content, stream: stream});
+        editAnnouncement({title: title, desc: content, stream: stream});
     }
     return (
         <StyledEditor>
-            <button className='close' onClick={() => {setOpen(false)}}>X</button>
-            <div className='title'><h2>Add an announcement</h2></div>
+            <button className='close' onClick={() => {setEdit(false)}}>X</button>
+            <div className='title'><h2>Editing announcement</h2></div>
             <div className='input'>
                 <label>Title:</label>
-                <input type='text' onChange={e => { setTitle(e.currentTarget.value); }} />
+                <input value={title} type='text' onChange={e => { setTitle(e.currentTarget.value); }} />
             </div>
             <div className='input'>
                 <label>Content:</label>
-                <textarea onChange={e => { setContent(e.currentTarget.value); }} />
+                <textarea value={content} onChange={e => { setContent(e.currentTarget.value); }} />
             </div>
             <div className='input'>
                 <label>Stream:</label>
-                <select onChange={e => { setStream(e.currentTarget.value) }}>
+                <select value={stream} onChange={e => { setStream(e.currentTarget.value) }}>
                     <option value=''></option>
                     <option value='studentcouncil'>Student Council stream</option>
                     <option value='guidance'>Guidance stream</option>
