@@ -166,8 +166,8 @@ function Weather({ weather }) {
 export async function getStaticProps() {
     // TODO: Add more info about the current conditions.
     // TODO: Switch out this link for the real api.
-    const res = await fetch('http://192.168.100.133:8000/api.json')
-   // const res = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`)
+    //const res = await fetch('http://192.168.100.133:8000/api.json')
+    const res = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`)
 
     /*
     TODO:

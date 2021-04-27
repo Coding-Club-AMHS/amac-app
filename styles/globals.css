@@ -7,6 +7,8 @@ body {
 }
 
 main {
+  background-color: #002642;
+
   color: #E0BE36;
   min-width: 80vw;
   min-height: 100vh;
@@ -20,7 +22,6 @@ a {
 }
 
 * {
-  background-color: #002642;
   margin-top: 0px;
   box-sizing: border-box;
 }
