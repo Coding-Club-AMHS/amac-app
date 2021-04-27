@@ -11,7 +11,7 @@ export default function Clubs() {
 
       <Menu />
       <main>
-
+ 
       </main>
 
     </div>
