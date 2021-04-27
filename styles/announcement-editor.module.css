@@ -1,0 +1,9 @@
+.entry {
+    background-color: gray;
+    padding: 2%;
+    margin: 2%;
+}
+
+.entry * {
+    background-color: rgba(0,0,0,0);
+}

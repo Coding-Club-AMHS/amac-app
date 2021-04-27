@@ -12,7 +12,7 @@ const StyledEditor = styled.div`
     transform: translate(-50%, -50%);
     text-align: left;
     flex-direction: column;
-    
+    z-index: 2;    
     .input {
         display:flex;
         flex-direction: row;

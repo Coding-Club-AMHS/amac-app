@@ -6,9 +6,10 @@ import AccessDenied from '../../components/access-denied'
 import AddButton from '../../components/add-button'
 import Editor from '../../components/editor'
 import { useState,useEffect } from 'react';
+import styles from '../../styles/announcement-editor.module.css'
 
 
-export default function AddStream({ isConnected, announcementStream }) {
+export default function AddStream({ announcementStream }) {
     const [session, loading] = useSession();
     const [open, setOpen] = useState(false);
 
@@ -19,8 +20,8 @@ export default function AddStream({ isConnected, announcementStream }) {
     return (
         <div>
             <Menu />
-            {isConnected
-                ? <div>
+
+                <div>
                     <main>
                         {/*waiting to see if perms can be found, this should've really been two different components but i was lazy*/}
                         <div>
@@ -30,7 +31,7 @@ export default function AddStream({ isConnected, announcementStream }) {
                                 : null}
                             <div>
                                 {announcementStream.map((announcement) => (
-                                    <div>
+                                    <div className={styles.entry}>
                                         <p>{new Date(announcement.lastUpdatedDate).toDateString()}</p>
                                         <h1>{announcement.title}</h1>
                                         {announcement.desc.split('\n').map(str => <p>{str}</p>)}
@@ -39,17 +40,12 @@ export default function AddStream({ isConnected, announcementStream }) {
                                 ))}
                             </div>
                             <div>
-                                <AddButton setOpen={setOpen} />
+                                <AddButton setOpen={setOpen} open={open}/>
                             </div>
                         </div>
 
                     </main>
                 </div>
-                : <div>
-                    <main>
-                        <h1> Something went wrong! Please either wait for the page to load, or refresh the page. </h1>
-                    </main>
-                </div>}
         </div>
     )
 }
@@ -60,8 +56,7 @@ export const getServerSideProps = async function () {
 
     return {
         props: {
-            announcementStream: JSON.parse(JSON.stringify(result)),
-            isConnected: client.isConnected()
+            announcementStream: JSON.parse(JSON.stringify(result))
         }
     }
 
