@@ -82,6 +82,7 @@ const getPercipitationInfo = (days, forecasts, daytime = true) => {
 }
 
 function Weather({ weather }) {
+    const dateObject = new Date(weather.LastUpdatedTimeStamp)
     return (
         <div>
 
@@ -95,7 +96,7 @@ function Weather({ weather }) {
             <main>
                 <h1 className={styles.headings}>Weather in Richmond Hill</h1>
                 <div className={styles.headlines}>
-                    <p><small>Last updated: {Date(weather.LastUpdatedTimeStamp).toLocaleString()}</small></p>
+                    <p><small>Last updated: {dateObject.toLocaleString()}</small></p>
                     <p>
                         Current conditions: {weather.daily.Headline.Text}
                     </p>
@@ -183,7 +184,6 @@ const updateWeatherDatabase = async (data) => {
 }
 
 const getDataFromAPI = async () => {
-    console.log(API_KEY);
     let hourly = await fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/49581?apikey=${API_KEY}&metric=true&details=true`);
     hourly = await hourly.json();
     let daily = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`);
@@ -197,7 +197,6 @@ const getDataFromAPI = async () => {
         hourly,
         daily
     };
-    console.log(weather_data);
     await updateWeatherDatabase(weather_data);
     return true;
 }
@@ -206,7 +205,6 @@ export const getServerSideProps = async function () {
     let weather = await getWeatherFromDatabase();
     const last_updated_elapsed = ((Date.now() - weather.LastUpdatedTimeStamp) / 1000) / 3600;
     if (last_updated_elapsed > 1) {
-        console.log("hello");
         getDataFromAPI();
         weather = await getWeatherFromDatabase();
     }
