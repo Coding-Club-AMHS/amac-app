@@ -1,10 +1,12 @@
 import StyledAnnouncement from '../styles/Announcement.styled'
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
+import {ThemeContext} from '../util/theme-context';
+
 const Announcement = ({ lastmodified, firstcreated, heading, description }) => {
-    useEffect(() => console.log(lastmodified + " " + firstcreated));
+    const theme = useContext(ThemeContext);
     return (
         <div>
-            <StyledAnnouncement>
+            <StyledAnnouncement theme={theme}>
                 <p className='date'>Posted {new Date(firstcreated).toString()}</p>
                 {lastmodified == firstcreated
                     ? null
