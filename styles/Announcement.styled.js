@@ -1,7 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 
 const StyledAnnouncement = styled.div`
-    background-color: #E0BE36;
+    background-color: ${({theme}) => theme.highlightBlue}};
     width: 90vw;
     height: auto;
     margin-top: 5vh;
@@ -33,7 +34,7 @@ const StyledAnnouncement = styled.div`
     .date {
         font-size: 2vh;
         background-color: transparent;
-        color: white;
+        color: ${({theme}) => theme.titleColor}};
         text-align: left;
         padding-left: 5vh;
         padding-top: 2vh;
