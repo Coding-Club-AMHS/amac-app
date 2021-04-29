@@ -7,6 +7,8 @@ export default function BasicClubInfo() {
             <Head>
                 <title> Basic Club Information</title>
             </Head>
+
+            <Menu />
             <main>
                 <h1>
                     What is Coding Club?
