@@ -1,6 +1,3 @@
-import Head from 'next/head'
-import Menu from '../../components/Menu'
-
 export default function BasicClubInfo() {
     return (
         <div>
@@ -17,6 +14,7 @@ export default function BasicClubInfo() {
                 <h3>
                     Coders meet on Tuesdays at 3:15 pm
                 </h3>
+              
                 <h2>
                     Club Sign Up
                 </h2>
