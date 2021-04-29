@@ -4,9 +4,9 @@ import Menu from '../../components/Menu'
 export default function BasicClubInfo() {
     return (
         <div>
-            <Head>
+            <head>
                 <title> Basic Club Information</title>
-            </Head>
+            </head>
             <main>
                 <h1>
                     What is Coding Club?
@@ -17,14 +17,12 @@ export default function BasicClubInfo() {
                 <h3>
                     Coders meet on Tuesdays at 3:15 pm
                 </h3>
-                <h1>
+                <h2>
                     Club Sign Up
-                </h1>
-                <a href="https://forms.gle/iU8wq1nHQhaicnqNA"></a>
-                <h3>
-                    Want to be an Executive? Submit your form!
-                </h3>
-                <a href="https://forms.gle/GKqaAisjdWUmW3xq8"></a>
+                </h2>
+                <a href="https://forms.gle/iU8wq1nHQhaicnqNA">Become a Coder</a>
+              <br></br>
+                <a href="https://forms.gle/GKqaAisjdWUmW3xq8">  Want to be an Executive? Submit your form!</a>
                 <h2>
                     Connect with us
                 </h2>
