@@ -25,10 +25,10 @@ export default function BasicClubInfo() {
                     Connect with us
                 </h2>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous"></link>
-            <a href="https://discord.gg/dKqAR6Qy"> <i class="fa fa-discord fa-4x" aria-hidden="true"></i></a>
-            <a href="coding_club_amhs"> <i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
-            <i class="fa fa-github fa-4x" aria-hidden="true"></i>
-            <a href="https://classroom.google.com/c/MjE3MjE0MjgyMDc4?cjc=ieqmyxg"><i class="fa fa-users fa-4x" aria-hidden="true"></i></a>
+            <a href="https://discord.gg/dKqAR6Qy"> <i class="fa fa-discord fa-3x" aria-hidden="true"></i></a>
+            <a href="coding_club_amhs"> <i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <a href="https://classroom.google.com/c/MjE3MjE0MjgyMDc4?cjc=ieqmyxg"><i class="fa fa-users fa-3x" aria-hidden="true"></i></a>
            </main>
         </div>
     )
