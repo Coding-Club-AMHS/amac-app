@@ -30,7 +30,6 @@ export default function StucoAnnouncements({ announcementStream }) {
             </Breadcrumb>
           </div>
 
-
           <div>
             {announcementStream.slice(0).reverse().map((announcement) => (
               announcement.stream == 'studentcouncil'
