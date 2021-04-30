@@ -1,11 +1,23 @@
-
+import StyledBlogEntry from '../styles/BlogEntry.styled'
 
 const BlogEntry = () => {
     return(
-        <div>
-            <h1>
-            </h1>
-        </div>
+        <StyledBlogEntry>
+            <h1 className='heading'>Title</h1>
+            <h3 className='subtitle'>Date</h3>
+            <h3 className='subtitle'>Author</h3>
+            <p className='bodytext'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum dolor sit amet consectetur adipiscing. Id diam vel quam elementum pulvinar etiam non quam lacus. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. Leo duis ut diam quam nulla porttitor. Sagittis eu volutpat odio facilisis mauris sit amet massa. Purus semper eget duis at tellus at urna. Venenatis cras sed felis eget velit aliquet sagittis id consectetur. Facilisis magna etiam tempor orci eu lobortis elementum. Enim nunc faucibus a pellentesque sit amet porttitor. Placerat vestibulum lectus mauris ultrices eros. Justo nec ultrices dui sapien. Tempus iaculis urna id volutpat. Leo urna molestie at elementum eu facilisis sed odio. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Eu scelerisque felis imperdiet proin fermentum leo vel orci porta. Aliquet eget sit amet tellus cras adipiscing enim. At tempor commodo ullamcorper a lacus. Urna et pharetra pharetra massa massa. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+
+                Habitant morbi tristique senectus et netus et. Sagittis nisl rhoncus mattis rhoncus urna neque viverra. Sed odio morbi quis commodo odio. Sollicitudin tempor id eu nisl nunc. Quis lectus nulla at volutpat diam ut venenatis. Etiam tempor orci eu lobortis elementum nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. Venenatis urna cursus eget nunc scelerisque. Non curabitur gravida arcu ac tortor dignissim convallis aenean. In eu mi bibendum neque egestas congue. Nunc mi ipsum faucibus vitae aliquet. Ut lectus arcu bibendum at varius. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Ut faucibus pulvinar elementum integer enim neque volutpat. Ornare arcu dui vivamus arcu felis. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Netus et malesuada fames ac turpis egestas integer eget aliquet.
+
+                Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Habitant morbi tristique senectus et netus et malesuada fames. Nunc sed velit dignissim sodales ut eu sem integer. Arcu odio ut sem nulla pharetra diam sit. Purus in massa tempor nec. Sit amet massa vitae tortor condimentum lacinia quis vel. Nam at lectus urna duis convallis convallis tellus. Porttitor eget dolor morbi non arcu risus quis varius quam. Pulvinar pellentesque habitant morbi tristique senectus et netus et. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Adipiscing commodo elit at imperdiet dui accumsan sit amet. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Mauris cursus mattis molestie a iaculis. Risus quis varius quam quisque. Morbi tincidunt augue interdum velit euismod in pellentesque. Amet cursus sit amet dictum sit. Sed elementum tempus egestas sed sed risus pretium quam. Et ligula ullamcorper malesuada proin libero nunc.
+
+                Aliquet lectus proin nibh nisl condimentum id venenatis a. Eget velit aliquet sagittis id consectetur purus ut faucibus. Vitae justo eget magna fermentum iaculis eu non. Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Nibh mauris cursus mattis molestie a iaculis at. Tempus egestas sed sed risus pretium. In est ante in nibh mauris cursus. Sed odio morbi quis commodo odio aenean sed adipiscing diam. Ornare massa eget egestas purus viverra. Quisque id diam vel quam. Tellus elementum sagittis vitae et leo duis. Morbi tristique senectus et netus et malesuada.
+
+                Massa sapien faucibus et molestie ac feugiat. Odio ut enim blandit volutpat. Metus dictum at tempor commodo ullamcorper. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Proin fermentum leo vel orci porta non. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Libero nunc consequat interdum varius sit amet mattis vulputate. Nunc congue nisi vitae suscipit tellus mauris a diam. Massa sapien faucibus et molestie ac feugiat sed lectus vestibulum. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit. Tristique senectus et netus et malesuada fames ac turpis. Lectus quam id leo in. Eleifend mi in nulla posuere. Elit ut aliquam purus sit amet luctus venenatis lectus. Massa eget egestas purus viverra. Leo vel orci porta non pulvinar neque laoreet.
+            </p>
+        </StyledBlogEntry>
     )
 }
 export default BlogEntry;

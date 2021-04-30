@@ -5,7 +5,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import styles from '../../../styles/homepage.module.css'
 import BlogEntry from '../../../components/BlogEntry'
 
-export default function StucoBlog() {
+export default function StucoBlogTest() {
   return (
     <div>
       <Head>
@@ -22,12 +22,13 @@ export default function StucoBlog() {
                 <Breadcrumb>
                   <Breadcrumb.Item href='/' className={styles.breadcrumb}>Home</Breadcrumb.Item>
                   <Breadcrumb.Item href='/stuco' className={styles.breadcrumb}>Stuco</Breadcrumb.Item>
-                  <Breadcrumb.Item active className={styles.breadcrumb}>Blog</Breadcrumb.Item>
+                  <Breadcrumb.Item href='/stuco/blog' className={styles.breadcrumb}>Blog</Breadcrumb.Item>
+                  <Breadcrumb.Item active className={styles.breadcrumb}>Post 1</Breadcrumb.Item>
                 </Breadcrumb>
               </div>
 
               <div>
-          
+                <BlogEntry/>
               </div>
 
           </div>
