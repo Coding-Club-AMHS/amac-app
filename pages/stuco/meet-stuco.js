@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Menu from '../../components/Menu'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import styles from '../../styles/homepage.module.css'
+import styles from '../../styles/stuco.module.css'
 import StucoMember from '../../components/stuco-member'
 
 export default function MeetStuco() {
@@ -22,12 +22,14 @@ export default function MeetStuco() {
                     </Breadcrumb>
                 </div>
 
-                <div>
+                <div className={styles.memberRow}>
+                    <StucoMember/>
                     <StucoMember/>
                     <StucoMember/>
                     <StucoMember/>
                 </div>
-                
+            
+
             </main>
         
         </div>

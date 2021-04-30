@@ -3,14 +3,11 @@ import styled from 'styled-components'
 const StyledStucoMember =styled.div`
 
     .card {
-      position: absolute;
-      top: 50%;
-      left: 50%;
       width: 40vh;
       height: 50vh;
       margin: 0;
       float: left;
-      perspective: 500px;
+      perspective: 100vh;
     }
     
     .content {
