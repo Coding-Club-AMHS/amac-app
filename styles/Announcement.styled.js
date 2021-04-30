@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 
 const StyledAnnouncement = styled.div`
-    background-color: ${({theme}) => theme.highlightBlue}};
-    width: 90vw;
+    background-color: #E0BE36;
+    width: 50%
     height: auto;
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -11,7 +11,7 @@ const StyledAnnouncement = styled.div`
     border-radius: 15px 50px 30px 1px;
     border-style: outset;
     border-width: 0.8vw;
-    align: center;
+    align-self: center;
     
     .heading {
         font-weight: bold;
@@ -38,6 +38,8 @@ const StyledAnnouncement = styled.div`
         text-align: left;
         padding-left: 5vh;
         padding-top: 2vh;
+        padding-bottom: 0 vh;
+        line-height: 0vh;
     }
 `
 export default StyledAnnouncement;

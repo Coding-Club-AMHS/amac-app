@@ -22,7 +22,20 @@ const Menu = () => {
                 }
             </div>
             <a href='/guidance'>Guidance</a>
-            <a href='/clubs'>Clubs</a>
+            <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
+                <a href='/clubs' className="dropdown">Clubs</a>
+                {
+                    dropdown ?
+                        <div className="school-dropdown">
+                            <a href='/clubs/basicclubinfo'>Basic Club Info</a>
+                            <a href=''>Sign Up</a>
+                            <a href=''>Feed</a>
+                            <a href=''>Club Contacts</a>
+                            <a href=''>Personality Test</a>
+                        </div>
+                        :null
+                }
+            </div>
             <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
                 <a href='/school-info' className="dropdown">School Info</a>
                 {

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Menu from '../../components/Menu'
 import styles from '../../styles/weather.module.css'
+import { connectToDatabase } from '../../util/db.js'
 import { API_KEY } from '../../api_key.json'
 
 const day = new Date();
@@ -81,6 +82,7 @@ const getPercipitationInfo = (days, forecasts, daytime = true) => {
 }
 
 function Weather({ weather }) {
+    const dateObject = new Date(weather.LastUpdatedTimeStamp)
     return (
         <div>
 
@@ -94,12 +96,12 @@ function Weather({ weather }) {
             <main>
                 <h1 className={styles.headings}>Weather in Richmond Hill</h1>
                 <div className={styles.headlines}>
-                    <p><small>Last updated {weather.Headline.EffectiveDate}</small></p>
+                    <p><small>Last updated: {dateObject.toLocaleString()}</small></p>
                     <p>
-                        Current conditions: {weather.Headline.Text}
+                        Current conditions: {weather.daily.Headline.Text}
                     </p>
                     <p>
-                        Current conditions category: {weather.Headline.Category}
+                        Current conditions category: {weather.daily.Headline.Category}
                     </p>
                 </div>
                 <div className={styles.daily_forecasts}>
@@ -118,22 +120,22 @@ function Weather({ weather }) {
                                 <td className={styles.day_or_night}>Day</td>
                             </tr>
                             <tr>
-                                {getIcons(forecast_length, weather.DailyForecasts)}
+                                {getIcons(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
-                                {getDescriptions(forecast_length, weather.DailyForecasts)}
+                                {getDescriptions(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
-                                {getMaxTemp(forecast_length, weather.DailyForecasts)}
+                                {getMaxTemp(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
-                                {getMinTemp(forecast_length, weather.DailyForecasts)}
+                                {getMinTemp(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
-                                {getWindInfo(forecast_length, weather.DailyForecasts)}
+                                {getWindInfo(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
-                                {getPercipitationInfo(forecast_length, weather.DailyForecasts)}
+                                {getPercipitationInfo(forecast_length, weather.daily.DailyForecasts)}
                             </tr>
                             <tr>
                                 <td className={styles.day_or_night}>Night</td>
@@ -143,16 +145,16 @@ function Weather({ weather }) {
                                 <td className={styles.day_or_night}>Night</td>
                             </tr>
                             <tr>
-                                {getIcons(forecast_length, weather.DailyForecasts, false)}
+                                {getIcons(forecast_length, weather.daily.DailyForecasts, false)}
                             </tr>
                             <tr>
-                                {getDescriptions(forecast_length, weather.DailyForecasts, false)}
+                                {getDescriptions(forecast_length, weather.daily.DailyForecasts, false)}
                             </tr>
                             <tr>
-                                {getWindInfo(forecast_length, weather.DailyForecasts, false)}
+                                {getWindInfo(forecast_length, weather.daily.DailyForecasts, false)}
                             </tr>
                             <tr>
-                                {getPercipitationInfo(forecast_length, weather.DailyForecasts, false)}
+                                {getPercipitationInfo(forecast_length, weather.daily.DailyForecasts, false)}
                             </tr>
                         </tbody>
                     </table>
@@ -163,31 +165,54 @@ function Weather({ weather }) {
     )
 }
 
-export async function getStaticProps() {
-    // TODO: Add more info about the current conditions.
-    // TODO: Switch out this link for the real api.
-    //const res = await fetch('http://192.168.100.133:8000/api.json')
-    const res = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`)
+const getWeatherFromDatabase = async () => {
+    const { client } = await connectToDatabase();
+    let weather = await client.db('weatherdb').collection("weather").find({}).toArray();
+    weather = JSON.parse(JSON.stringify(weather));
+    if (weather.length == 0) {
+        throw new Error (
+            "weatherdb error"
+        );
+    }
+    weather = weather[weather.length - 1];
+    return weather;
+}
 
-    /*
-    TODO:
-    Possible strategy to reduce API calls:
-        - On every API call, create a timestamp for that call to show how old the data is
-        - On every subsequent call, check if the last request was made in the last hour
-            - If so, reuse the previous data
-            - Else, make a new call and update the timestamp
+const updateWeatherDatabase = async (data) => {
+    const { client } = await connectToDatabase();
+    const weather = await client.db("weatherdb").collection("weather").insertOne(data);
+}
 
-        This strategy will reduce API calls to a maximum of 24 per day (Accessed every hour).
-        Additionally, we can add "Last updated: {x} minutes ago" to the page, where x is the time between the last API call and the current time.
+const getDataFromAPI = async () => {
+    let hourly = await fetch(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/49581?apikey=${API_KEY}&metric=true&details=true`);
+    hourly = await hourly.json();
+    let daily = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/49581?apikey=${API_KEY}&metric=true&details=true`);
+    daily = await daily.json();
+    if (hourly.Code == "ServiceUnavailable" || daily.Code == "ServiceUnavailable" || hourly.Code == "Unauthorized" || daily.Code == "Unauthorized") {
+        console.error("API Limit excedded");
+        return false;
+    }
+    const weather_data = {
+        "LastUpdatedTimeStamp": Date.now(),
+        hourly,
+        daily
+    };
+    await updateWeatherDatabase(weather_data);
+    return true;
+}
 
-    @Matthew if you have any questions let me know (Jason)
-    */
-    const weather = await res.json()
+export const getServerSideProps = async function () {
+    let weather = await getWeatherFromDatabase();
+    const last_updated_elapsed = ((Date.now() - weather.LastUpdatedTimeStamp) / 1000) / 3600;
+    if (last_updated_elapsed > 1) {
+        getDataFromAPI();
+        weather = await getWeatherFromDatabase();
+    }
 
     return {
         props: {
-            weather,
-        },
+            weather
+        }
     }
 }
 
