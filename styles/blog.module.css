@@ -1,0 +1,85 @@
+.breadcrumb {
+    background-color: transparent;
+}
+
+.gridContainer {
+    display: grid;
+    grid-gap: 5vh;
+    background-color:white;
+    padding: 10px;
+    height: 140vh;
+}
+
+
+.featured {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    background-color:red;
+    text-align: left;
+    
+}
+.featuredtitle {
+    text-align: left;
+    margin-left:3vh;
+    margin-right: 2vh;
+    font-size: 5vh;
+    margin-top: 10vh;
+    color:white;
+}
+
+.featuredimage {
+    width: 120vh;
+    height: 60vh;
+    object-fit: cover;
+    padding-left:3vh;
+    padding-top: 3vh;
+    padding-right: 3vh;
+}
+  
+.important {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background-color:blue;
+    text-align: right;
+}
+
+.importantsection {
+    border: lightpink;
+    border-style: solid;
+    border-width: 0.5vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    padding:5vh;
+    margin-bottom: 1vh;
+}
+
+.importanttitle {
+    text-align:right;
+    margin-left:3vh;
+    margin-right: 2vh;
+    font-size: 4vh;
+    color:lemonchiffon;
+}
+  
+.latest {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 2;
+    background-color:green;
+    text-align: left;
+    padding-left: 3vh;
+    padding-top: 3vh;
+    padding-right: 3vh;
+
+}
+
+.latestsection {
+    border:gold;
+    border-style: solid;
+    border-width: 0.5vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 3vh;
+    padding: 2vh;
+}

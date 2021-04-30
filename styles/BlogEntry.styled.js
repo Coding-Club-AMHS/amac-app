@@ -9,26 +9,35 @@ const StyledBlogEntry = styled.div`
 
     .heading {
         color: black;
-        margin-left: 20vh;
+        margin-left: 30vh;
         padding-top: 10vh;
         font-size: 8vh;
+        margin-right: 30vh;
   
     }
 
     .subtitle {
         color: grey;
-        margin-left: 20vh;
+        margin-left: 30vh;
         font-size: 3vh;
+        margin-right: 30vh;
 
     }
 
     .bodytext {
         color: black;
-        margin-left: 20vh;
-        font-size: 3.5vh;
-        margin-right: 20vh;
-        padding-bottom: 20vh;
+        margin-left: 30vh;
+        font-size: 3vh;
+        margin-right: 30vh;
+        padding-bottom: 30vh;
+        padding-top: 5vh;
   
+    }
+
+    .coverimage {
+        width: 100%;
+        height: 35vh;
+        object-fit: cover;
     }
 
 `

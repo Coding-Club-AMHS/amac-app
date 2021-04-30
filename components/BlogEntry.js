@@ -3,6 +3,7 @@ import StyledBlogEntry from '../styles/BlogEntry.styled'
 const BlogEntry = () => {
     return(
         <StyledBlogEntry>
+            <img className='coverimage' src='https://i.redd.it/18lkhjhvs4141.jpg' />
             <h1 className='heading'>Title</h1>
             <h3 className='subtitle'>Date</h3>
             <h3 className='subtitle'>Author</h3>
