@@ -50,13 +50,13 @@ export default function StucoBlog() {
                 <div className={styles.latest}>
                   <h1>Latest</h1>
                   <div className={styles.latestsection}>
-                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Important Article Title Numero 1</a>
+                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Recent Article Title Numero 1</a>
                   </div>
                   <div className={styles.latestsection}>
-                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Important Article Title Numero 1</a>
+                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Recent Article Title Numero 1</a>
                   </div>
                   <div className={styles.latestsection}>
-                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Important Article Title Numero 1</a>
+                    <a className={styles.importanttitle} href='/stuco/blog/testblogpage'>Recent Article Title Numero 1</a>
                   </div>
                   
                 </div>
