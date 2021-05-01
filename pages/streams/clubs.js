@@ -10,12 +10,10 @@ import AddButton from '../../components/add-button';
 import Editor from '../../components/club-editor';
 import styles from '../../styles/announcement-editor.module.css'
 
-
 export default function ManageClubs({ clubStream }) {
     const [session, loading] = useSession();
     const [open, setOpen] = useState(false);
     const [editProps, setEditProps] = useState();
-
     const router = useRouter();
     const contentType = 'application/json';
 
@@ -23,8 +21,7 @@ export default function ManageClubs({ clubStream }) {
     if (!session) { return <div><AccessDenied /></div> }
 
     const onEdit = ({ id, name, desc, schedule, links, contact }) => {
-            setEditProps({ id: id, clubName: name, clubDesc: desc, clubSchedule: schedule, clubLinks: links, clubContact: contact });
-
+        setEditProps({ id: id, clubName: name, clubDesc: desc, clubSchedule: schedule, clubLinks: links, clubContact: contact });
     }
 
     const onDelete = async ({ id }) => {
