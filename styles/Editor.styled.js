@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledEditor = styled.div`
-    background-color: lightgray;
+    background-color: #EEEEFF;
     color: black;
     width: 85vw;
     padding: 2vh;
@@ -13,12 +13,35 @@ const StyledEditor = styled.div`
     text-align: left;
     flex-direction: column;
     z-index: 3;    
+    max-height: 90vh;
+    overflow-y: scroll;
+
     .input {
         display:flex;
         flex-direction: row;
         flex-flow: column wrap;
         
         }
+    .del {
+        background-color: red;
+        color: white;
+        
+    }
+    .del:hover {
+        background-color:crimson;
+    }
+    .inputlink {
+        display: flex;
+        flex-direction: row;
+        flex-flow: column wrap;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 2%;
+        background-color: lightgray;
+    }
+
     * {
         background-color: rgba(0,0,0,0);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -37,6 +60,18 @@ const StyledEditor = styled.div`
     textarea {
         background-color: white;
         height: 30vh;
+    }
+    .medium {
+        height: 10vh;
+    }
+    .add {
+        background-color: #002443;
+        color: white;
+
+    }
+    .add:hover {
+        background-color: #145EA0;
+
     }
     input {
         background-color: white;

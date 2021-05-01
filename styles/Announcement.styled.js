@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const StyledAnnouncement = styled.div`
     background-color: #E0BE36;
-    width: 50%
     height: auto;
     margin-top: 5vh;
     margin-bottom: 5vh;

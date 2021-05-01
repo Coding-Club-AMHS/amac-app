@@ -20,6 +20,7 @@ export default function AddStream({ isConnected}) {
               <LoginHeader />
               <button onClick={() => {window.location='/streams/announcements'}}>Edit announcements</button>
               <button onClick={() => {window.location='/streams/clubs'}}>Edit clubs</button>
+              <button onClick={() => {window.location='/streams/clubs'}}>Change password</button>
             </div>
 
           </main>

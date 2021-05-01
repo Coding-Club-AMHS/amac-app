@@ -16,7 +16,6 @@ const Menu = () => {
                         <div className="school-dropdown">
                             <a href='/stuco/announcements'>Announcements</a>
                             <a href='/stuco/meet-stuco'>Current STUCO Team</a>
-                            <a href='/stuco/blog'>Blog</a>
                         </div>
                         :null
                 }
@@ -28,9 +27,6 @@ const Menu = () => {
                     dropdown ?
                         <div className="school-dropdown">
                             <a href='/clubs/basicclubinfo'>Basic Club Info</a>
-                            <a href=''>Sign Up</a>
-                            <a href=''>Feed</a>
-                            <a href=''>Club Contacts</a>
                             <a href=''>Personality Test</a>
                         </div>
                         :null
