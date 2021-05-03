@@ -14,7 +14,7 @@ const Menu = () => {
         <StyledMenu theme={theme}>
             <div className='links'>
                 <div className='lozlink'>
-{/*                    <img src='https://media.discordapp.net/attachments/823340148628520990/838522725806243840/unknown.png?width=528&height=543' style={{width:'5vw', height: '5vw', margin: '5%'}} /> */}
+                    {/*                    <img src='https://media.discordapp.net/attachments/823340148628520990/838522725806243840/unknown.png?width=528&height=543' style={{width:'5vw', height: '5vw', margin: '5%'}} /> */}
                     <a href='/'>Home</a>
                     <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
                         <a href='/stuco' className="dropdown">STUCO</a>
@@ -34,6 +34,7 @@ const Menu = () => {
                             dropdown ?
                                 <div className="school-dropdown">
                                     <a href='/clubs/basicclubinfo'>Basic Club Info</a>
+                                    <a href='/clubs/clubfeed'> Club Feed</a>
                                     <a href=''>Personality Test</a>
                                 </div>
                                 : null
@@ -55,7 +56,6 @@ const Menu = () => {
                     <a href='/faq'>FAQ</a>
 
                 </div>
-
             </div>
         </StyledMenu>
     )
