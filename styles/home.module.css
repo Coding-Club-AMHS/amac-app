@@ -1,0 +1,29 @@
+.fade {
+    animation: fadeIn 3s;
+}
+.image {
+    margin: 2%;
+    border-style: solid;
+    border-width: 1 vh;
+    border-radius: 100%;
+    width: 60vh;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.caption {
+    padding: 2%;
+    background-color: rgba(0, 0, 0,0.69);
+    align-self: center;
+    justify-self: center;
+    color: #E0BE36;
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity:0;  
+    }  
+    100% { 
+        opacity:1;
+    }
+  }
