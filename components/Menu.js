@@ -27,6 +27,7 @@ const Menu = () => {
                     dropdown ?
                         <div className="school-dropdown">
                             <a href='/clubs/basicclubinfo'>Basic Club Info</a>
+                            <a href='/clubs/clubfeed'> Club Feed</a>
                             <a href=''>Personality Test</a>
                         </div>
                         :null
