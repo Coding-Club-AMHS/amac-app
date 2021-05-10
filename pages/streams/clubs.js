@@ -61,7 +61,7 @@ export default function ManageClubs({ clubStream }) {
                                         <h2>{club.schedule}</h2>
                                         {club.links.length > 0 ? <h2>Links: </h2>: null}
                                         {club.links.map((link) => (
-                                                <a href={'/' + link.url}>{link.desc}</a>
+                                                <a href={'//' + link.url}>{link.desc}</a>
                                         ))}
                                         <h2>Contact us: </h2>
                                         {club.contact.split('\n').map(str => <p>{str}</p>)}
