@@ -9,7 +9,7 @@ body {
 main {
   background-color: #002642;
 
-  color: #E0BE36;
+  color: #e0be36;
   min-width: 80vw;
   min-height: 100vh;
   padding: 2%;
@@ -25,5 +25,5 @@ a {
   margin-top: 0px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      box-sizing: border-box;
+  box-sizing: border-box;
 }
