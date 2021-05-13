@@ -5,7 +5,7 @@
 .gridContainer {
     display: grid;
     grid-gap: 5vh;
-    background-color:white;
+    background-color:#002642;
     padding: 10px;
     height: 150vh;
 }
@@ -14,7 +14,7 @@
 .featured {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
-    background-color:red;
+    background-color:#FFD865;
     text-align: left;
     
 }
@@ -24,7 +24,7 @@
     margin-right: 2vh;
     font-size: 5vh;
     margin-top: 10vh;
-    color:white;
+    color:#002642;
 }
 
 .featuredimage {
@@ -39,7 +39,7 @@
 .important {
     grid-column: 3;
     grid-row: 1 / span 2;
-    background-color:blue;
+    background-color:#FFD865;
     text-align: right;
 }
 
@@ -59,13 +59,13 @@
     margin-left:3vh;
     margin-right: 2vh;
     font-size: 4vh;
-    color:lemonchiffon;
+    color:#002642;
 }
   
 .latest {
     grid-column: 1 / span 3;
     grid-row: 3 / span 2;
-    background-color:green;
+    background-color:#FFD865;
     text-align: left;
     padding-left: 3vh;
     padding-top: 3vh;

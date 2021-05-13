@@ -2,8 +2,12 @@ import Head from 'next/head'
 import Menu from '../../components/Menu'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import styles from '../../styles/mainpages.module.css'
+import { ThemeContext } from '../util/theme-context';
+import { useContext } from 'react';
 
 export default function StucoHome() {
+  const theme = useContext(ThemeContext);
+
     return(
         <div>
             <Head>
@@ -21,7 +25,7 @@ export default function StucoHome() {
 
                 <div className={styles.gridContainer}>
                 <div className={styles.featured}>
-                  <img className={styles.featuredimage} src='https://www.saltstrong.com/wp-content/uploads/Screen-Shot-2020-02-19-at-4.16.29-PM-1024x638.png' />
+                  <img className={styles.featuredimage} src='https://cdn.someecards.com/posts/tk-teachers-share-the-changes-theyve-seen-at-high-school-reunions-WPf.png' />
                   <div>
                     <a className={styles.featuredtitle}href='/stuco/meet-stuco'>Meet our team!</a>
                   </div>
