@@ -17,12 +17,12 @@ const Menu = () => {
                     {/*                    <img src='https://media.discordapp.net/attachments/823340148628520990/838522725806243840/unknown.png?width=528&height=543' style={{width:'5vw', height: '5vw', margin: '5%'}} /> */}
                     <a href='/'>Home</a>
                     <div onMouseEnter={() => toggleDropdown()} onMouseLeave={() => toggleDropdown()}>
-                        <a href='/stuco' className="dropdown">STUCO</a>
+                        <a href='/stuco' className="dropdown">StuCo</a>
                         {
                             dropdown ?
                                 <div className="school-dropdown">
                                     <a href='/stuco/announcements'>Announcements</a>
-                                    <a href='/stuco/meet-stuco'>Current STUCO Team</a>
+                                    <a href='/stuco/meet-stuco'>Current StuCo Team</a>
                                 </div>
                                 : null
                         }
