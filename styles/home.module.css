@@ -24,20 +24,16 @@
   padding: 1%;
   background-color: rgba(0, 0, 0, 0.69);
   width: 100vh;
-  margin-left: 16vh;
-  align-self: center;
-  justify-self: center;
   color: #ffffff;
+  margin: auto;
 }
 
 .caption1 {
   padding: 1.5%;
   background-color: rgba(255, 255, 255, 0.69);
   width: 80vh;
-  margin-left: 25vh;
-  align-self: center;
-  justify-self: center;
   color: #000000;
+  margin: auto;
 }
 
 @keyframes fadeIn {
