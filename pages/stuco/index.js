@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Menu from '../../components/Menu'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import styles from '../../styles/mainpages.module.css'
-import { ThemeContext } from '../util/theme-context';
+import { ThemeContext } from '../../util/theme-context';
 import { useContext } from 'react';
 
 export default function StucoHome() {
