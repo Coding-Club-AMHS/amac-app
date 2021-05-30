@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Menu from '../components/Menu'
 import styles from '../styles/home.module.css';
 
-import { ThemeContext } from '../util/theme-context';
+import { ThemeContext } from '../util/theme-context'
 import { useContext } from 'react';
 
 export default function Home() {

@@ -1,0 +1,11 @@
+.background {
+    background-color: #EEEEFF;
+    margin-left: 5vh;
+}
+.clubsdiv {
+    padding-top: 7vh;
+}
+.image {
+    position: inherit;
+    object-fit: cover;
+}
