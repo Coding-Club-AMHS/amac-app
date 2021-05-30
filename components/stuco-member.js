@@ -8,7 +8,7 @@ const StucoMember = () => {
             <div class="card">
                 <div class="content">
                     <div class="front" >
-                        <img src='https://images-na.ssl-images-amazon.com/images/I/61%2BYo-Ptj5L._AC_SX425_.jpg' className='image' />
+                        <img src='https://advokat-fam.ru/img/anonim.jpg' className='image' />
                     </div>
                     <div class="back">
                         <h5>Name</h5>

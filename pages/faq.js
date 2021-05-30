@@ -13,7 +13,7 @@ export default function Faq() {
 
       <Menu />
       <main className={styles}>
-        <h1 className={styles.h1}>Welcome To FAQ</h1>
+        <h1 className={styles.h1}>Frequently asked questions</h1>
            <h2 className={styles.h2}>Question</h2>
            <div className={styles.answer}>answer</div>
            <h2 className={styles.h2}>Question</h2>

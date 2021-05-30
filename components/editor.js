@@ -2,7 +2,7 @@ import { useState} from 'react'
 import { useRouter } from 'next/router'
 import StyledEditor from '../styles/Editor.styled'
 
-export default function Editor({ setOpen, editProps }) {
+export default function Editor({ setOpen, editProps = {announceTitle: '', announceContent: '', announceStream:'', id:''} }) {
     const router = useRouter();
     const contentType = 'application/json';
 
@@ -15,7 +15,7 @@ export default function Editor({ setOpen, editProps }) {
 
     const addAnnouncement = async () => {
         let announcement = { title: title, desc: content, stream: stream, firstPostedDate: Date.now(), lastUpdatedDate: Date.now() };
-
+        console.log('add announce');
         try {
             const res = await fetch('/api/announcements/', {
                 method: 'POST',
@@ -38,6 +38,7 @@ export default function Editor({ setOpen, editProps }) {
 
     const editAnnouncement = async () => {
         let announcement = { title: title, desc: content, stream: stream, firstPostedDate: Date.now(), lastUpdatedDate: Date.now() };
+        console.log(id);
 
         try {
             const res = await fetch(`/api/announcements/${id}`, {
@@ -55,13 +56,13 @@ export default function Editor({ setOpen, editProps }) {
             router.reload();
             setEdit(false);
         } catch (err) {
-            setSubmitError("Failed to add announcement.");
+            setSubmitError("Failed to edit announcement.");
         }
     }
 
     function submitStream() {
         if (title == '' || content == '' || stream == '') return setSubmitError('Please fill out every field!');
-        if (id == '') addAnnouncement();
+        if (id == '' || id == undefined) addAnnouncement();
         else editAnnouncement();
     }
     return (
