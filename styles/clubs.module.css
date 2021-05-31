@@ -9,3 +9,119 @@
     position: inherit;
     object-fit: cover;
 }
+
+
+
+/*individual clubs*/
+.gridContainer{
+    display: grid;
+    grid-gap: 5vh;
+    padding: 10px;
+    height: 150vh;
+}
+
+.sectionImage {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    background: #EEEEFF;
+    padding-left: 5vh;
+    width: 100%;
+
+}
+
+.links {
+    margin-top: 5vh;
+    font-size: 3vh;
+}
+
+.clubImage {
+    width: 40vh;
+    height: 40vh;
+    object-fit: cover;
+    margin-top: 10vh;
+    margin-left: 5vh;
+    align-self: right;
+    border-radius: 100%;
+    border-style: solid;
+
+
+}
+.linksbutton {
+
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0%;
+    font-size: x-large;
+    font-weight: 100%;
+    color:#002642;
+    align-self: left;
+}
+
+.info {
+    border: #EEEEFF;
+    border-style: solid;
+    border-width: 0.5vh;
+    margin-top: 5vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    padding:5vh;
+    margin-bottom: 1vh;
+    height: auto;
+    color: black;
+    width: 90%;
+    background-color: #EEEEFF;
+}
+.infoheading {
+    color: #004AAD;
+    text-align: center;
+    font-size: 5vh;
+}
+
+.infodescription {
+    color: #004AAD;
+    text-align: left;
+    margin-top: 3vh;
+    margin-left: 5vh;
+    margin-right: 1vh;
+    background-color: #FFD865;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-size: 3vh;
+    border-radius: 5%;
+    margin-bottom: 1vh;
+}
+  
+.sectionInfo {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    background-color:#EEEEFF;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin-right: 10vh;
+}
+
+.sectionCalendar {
+    text-align: center;
+    margin-top: 1vh;
+    margin-left: 20vh;
+    margin-right: 1vh;
+    width: 100%;
+
+}
+
+.calendar {
+    color: #004AAD;
+    border-style: solid;
+    margin-top: 3vh;
+    margin-left: 5vh;
+    margin-right: 1vh;
+    align-content: center;
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    text-align: center;
+    border-color: #004AAD;
+    font-size: 2vh;
+}
