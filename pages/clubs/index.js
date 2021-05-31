@@ -27,9 +27,8 @@ export default function Clubs() {
           </Breadcrumb>
       </div>
         <div className={styles.clubsdiv}>
-          <ClubButton style={{background: '#004AAD'}} >
-  
-            <h1 className='blue'>Club Name</h1></ClubButton>
+          <ClubButton style={{background: '#004AAD'}} href='/clubs/individualclubs' target={"_blank"}>
+            <h1 className='blue'>Coding Club</h1></ClubButton>
           <ClubButton style={{background: '#FFDE59'}}>
             <h1 className='yellow'>Club Name</h1> </ClubButton>
           <ClubButton style={{background: '#004AAD'}}>
