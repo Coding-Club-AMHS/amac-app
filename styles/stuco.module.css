@@ -15,6 +15,10 @@
 }
 
 .memberRow{
-    align-items: center;
-    
+    align-content: center;
+    margin: auto;
+}
+
+.background {
+    background-color: #EEEEFF;
 }
