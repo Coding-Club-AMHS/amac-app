@@ -1,13 +1,17 @@
 import styled from 'styled-components'
  
-const StyledStucoMember =styled.div`
+const StyledStucoMember =styled.div` 
 
     .card {
-      width: 40vh;
-      height: 50vh;
-      margin: 0;
+      
+      height: 60vh;
+      width: 40vh; 
+      margin: 3vh;
       float: left;
       perspective: 100vh;
+      border: solid;
+      border-color: #FFD956;
+
     }
     
     .content {
@@ -43,9 +47,22 @@ const StyledStucoMember =styled.div`
       transform: rotateY( 180deg );
     }    
 
-    .description {
-
+    p {
+      padding: 1vh;
+      color: black;
+      font-size: 2.3vh;
     }
+    h4 {
+      color: black;
+      padding-top: 0.5vh;
+      font-size: 4vh;
+    }
+    h5 {
+      color: black;
+      padding: 0;
+      font-size: 3.5vh;
+    }
+
 
     .image {
         height: 100%;

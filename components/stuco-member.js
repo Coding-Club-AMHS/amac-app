@@ -1,19 +1,23 @@
 import StyledStucoMember from '../styles/stuco-member.styled'
 import React, { useState } from 'react';
 
-const StucoMember = () => {
+const StucoMember = (props) => {
    
     return(
         <StyledStucoMember>
             <div class="card">
                 <div class="content">
                     <div class="front" >
-                        <img src='https://advokat-fam.ru/img/anonim.jpg' className='image' />
+                        <img src={props.image} className='image' />
                     </div>
                     <div class="back">
-                        <h5>Name</h5>
-                        <h5>Position</h5>
-                        <p>description</p>
+                        <h4>{props.name}</h4>
+                        <h5>{props.position}</h5>
+                        <p>{props.description}</p>
+                        
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
