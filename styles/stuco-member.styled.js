@@ -5,7 +5,7 @@ const StyledStucoMember =styled.div`
     .card {
       
       height: 60vh;
-      width: 40vh; 
+      width: 37vh; 
       margin: 3vh;
       float: left;
       perspective: 100vh;
