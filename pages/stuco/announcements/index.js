@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Menu from '../../../components/Menu'
 import Announcement from '../../../components/Announcement'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import styles from '../../../styles/homepage.module.css'
+import styles from '../../../styles/announcement.module.css'
 
 export default function StucoAnnouncements({ announcementStream }) {
   const theme = useContext(ThemeContext);
@@ -29,16 +29,28 @@ export default function StucoAnnouncements({ announcementStream }) {
               <Breadcrumb.Item active className={styles.breadcrumb}>Announcements</Breadcrumb.Item>
             </Breadcrumb>
           </div>
+          <div className={styles.gridContainer}>
+            <div className={styles.sectionPermanent}>
+              <div className={styles.permanentAnnouncement}> <h1>Google Classroom</h1> Join the Google Classroom for school activities! <br/>Code: </div>
+              <div className={styles.permanentAnnouncement}> <h1>Class of 2021</h1>Congratulations Class of 2021! We are so excited for you! We wish you the best on future endeavours!</div>
+              <div className={styles.permanentAnnouncement}><h1>Virtual Graduation</h1>Join us for a virtual graduation ceremony for our graduates this Thursday!</div>
 
-          <div>
-            {announcementStream.slice(0).reverse().map((announcement) => (
-              announcement.stream == 'studentcouncil'
-                ? <div className={styles.entry}>
-                  <Announcement lastmodified={announcement.lastUpdatedDate} firstcreated={announcement.firstPostedDate} heading={announcement.title} description={announcement.desc} />
-                </div>
-                : null
-            ))}
+            </div>
+
+            <div className={styles.sectionMain}>
+              {announcementStream.slice(0).reverse().map((announcement) => (
+                announcement.stream == 'studentcouncil'
+                  ? <div >
+                    <Announcement lastmodified={announcement.lastUpdatedDate} firstcreated={announcement.firstPostedDate} heading={announcement.title} description={announcement.desc} />
+                  </div>
+                  : null
+              ))}
+            </div>
+
+
           </div>
+
+          
 
 
         </div>

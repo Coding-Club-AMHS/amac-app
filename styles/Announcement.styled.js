@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledAnnouncement = styled.div`
     background-color: #E0BE36;
     height: auto;
+    width: 120vh;
     margin-top: 5vh;
     margin-bottom: 5vh;
     border-color: white;
@@ -11,7 +12,12 @@ const StyledAnnouncement = styled.div`
     border-style: outset;
     border-width: 0.8vw;
     align-self: center;
+    padding-right: 0.5vh;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     
+
     .heading {
         font-weight: bold;
         font-size: 7vh;
@@ -28,6 +34,7 @@ const StyledAnnouncement = styled.div`
         text-align: left;
         padding-left: 5vh;
         padding-bottom: 2vh;
+        
     }
     
     .date {

@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Menu from '../../components/Menu'
+import Menu from '../../../components/Menu'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import styles from '../../styles/stuco.module.css'
-import StucoMember from '../../components/stuco-member'
+import styles from '../../../styles/stuco.module.css'
+import StucoMember from '../../../components/stuco-member'
 
 
 
-export default function MeetStuco() {
+export default function STUCOTeam2021_2022() {
     return(
         <div style={{background: '#EEEEFF'}}>
             <Head>
@@ -14,7 +14,7 @@ export default function MeetStuco() {
             </Head>
             <Menu/>
             <main>
-                <h1>Current STUCO Members</h1>
+                <h1>STUCO Team 2021-2022</h1>
 
                 <div>
                     <Breadcrumb>

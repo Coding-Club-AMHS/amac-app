@@ -1,0 +1,41 @@
+
+.gridContainer{
+    display: grid;
+    grid-gap: 5vh;
+    padding: 10px;
+    height: 150vh;
+}
+
+.sectionPermanent {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    background: #EEEEFF;
+    padding-right: 1vh;
+    width: 100%;
+}
+
+.permanentAnnouncement {
+    width: 30vh;
+    height: auto;
+    border-bottom: 1vh;
+    border-top: 0vh;
+    border-left: 0;
+    border-right: 0;
+    border-style: solid;
+    border-color: black;
+    margin-top: 5vh;
+    color: black;
+    padding-right: 3vh;
+    padding-bottom: 3vh;
+    text-align: left;
+}
+
+.sectionMain {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    background-color:#EEEEFF;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin-right: 10vh;
+}
