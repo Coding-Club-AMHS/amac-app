@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Menu from '../components/Menu'
 import Announcement from '../components/Announcement'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import styles from '../styles/homepage.module.css'
+import styles from '../styles/announcement.module.css'
 
 export default function Guidance({ announcementStream }) {
   const theme = useContext(ThemeContext);
@@ -29,15 +29,27 @@ export default function Guidance({ announcementStream }) {
             </Breadcrumb>
           </div>
 
-          <div>
-            {announcementStream.slice(0).reverse().map((announcement) => (
-              announcement.stream == 'guidance'
-                ? <div className={styles.entry}>
-                  <Announcement lastmodified={announcement.lastUpdatedDate} firstcreated={announcement.firstPostedDate} heading={announcement.title} description={announcement.desc} />
-                </div>
-                : null
-            ))}
+          <div className={styles.gridContainer}>
+            <div className={styles.sectionPermanent}>
+              <div className={styles.permanentAnnouncement}> <h1>Sample Guidance Announcement </h1> Sample Guidance Announcement <br/>Sample Guidance Announcement </div>
+              <div className={styles.permanentAnnouncement}> <h1>Sample Guidance Announcement </h1>Sample Guidance Announcement </div>
+              <div className={styles.permanentAnnouncement}><h1>Sample Guidance Announcement </h1>Sample Guidance Announcement Sample Guidance Announcement Sample Guidance Announcement </div>
+
+            </div>
+
+            <div className={styles.sectionMain}>
+              {announcementStream.slice(0).reverse().map((announcement) => (
+                announcement.stream == 'guidance'
+                  ? <div >
+                    <Announcement lastmodified={announcement.lastUpdatedDate} firstcreated={announcement.firstPostedDate} heading={announcement.title} description={announcement.desc} />
+                  </div>
+                  : null
+              ))}
+            </div>
+            
           </div>
+
+          
 
 
         </div>
