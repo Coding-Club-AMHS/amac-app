@@ -13,7 +13,7 @@ export default function Guidance({ announcementStream }) {
   return (
     <div >
       <Head>
-        <title>Guidance Announcements</title>
+        <title>GUIDANCE ANNOUNCEMENTS</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
